@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_compra" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4a0e7d03-35fa-429a-8eb1-d2cdbdc03fbb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM COMPRA]]>
+	</queryString>
+	<field name="id_comp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_comp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="formaPag_comp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precoVenda" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="data_comp">
+		<groupExpression><![CDATA[$F{data_comp}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="437" y="0" width="118" height="79" uuid="a04f68a2-b2c8-421f-bd75-9adb66ab4c2a"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="118" height="79" uuid="d07c4c1a-a2c9-415b-bd14-65a7b913fa7c"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="118" y="0" width="319" height="79" uuid="ce181598-eb06-4e66-ab53-872a4491ef68"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[RELATÓRIO DE COMPRAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="30" width="118" height="20" backcolor="#CCCCCC" uuid="3b967665-5b55-43cb-bccb-efd0edff582a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="118" y="30" width="170" height="20" backcolor="#CCFFFF" uuid="6ee2a648-ad9a-4a87-be4b-8d5a5d43c436"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="288" y="30" width="149" height="20" backcolor="#CCCCCC" uuid="3c5aff03-6a97-4100-ab51-4a0a9d904def"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="437" y="30" width="118" height="20" backcolor="#CCFFFF" uuid="77d6f85c-0054-4ae8-9ea6-96b223dc4043"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="30" width="118" height="20" uuid="7754b602-c6f9-448a-a95b-d27716a1cc6e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="30" width="170" height="20" uuid="3823ff52-3011-458b-904c-b7c6ec660240"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA DA COMPRA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="30" width="149" height="20" uuid="c3f17a91-d32f-45d2-a196-2b6187f6489a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORMA DE PAGAMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="437" y="30" width="118" height="20" uuid="fd46b7f0-b41e-4827-a206-7d24b8fe96ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL DA COMPRA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="118" y="0" width="170" height="20" backcolor="#CCFFFF" uuid="3a270dc9-8af8-4f8a-9f7f-460e7481634c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="288" y="0" width="149" height="20" backcolor="#CCCCCC" uuid="b2bab697-d8c6-4b10-853e-36c64796f51f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="437" y="0" width="118" height="20" backcolor="#CCFFFF" uuid="8909ffd7-c3ae-4bf9-be77-1650b46d102d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="118" height="20" backcolor="#CCCCCC" uuid="47868282-28b6-455d-8cc1-df6c339a11e3"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="118" height="20" uuid="4b677c59-5144-4e21-9175-97a2645ed590"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_comp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="0" width="170" height="20" uuid="bc68a1a8-af8b-493a-a2e7-70137e94790d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{data_comp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="0" width="149" height="20" uuid="7355ba48-5edd-4b87-b89b-9bfa38bc1fe5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{formaPag_comp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="0" width="118" height="20" uuid="cd4691f7-f114-4284-9607-31b7bf5c8af3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{precoVenda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

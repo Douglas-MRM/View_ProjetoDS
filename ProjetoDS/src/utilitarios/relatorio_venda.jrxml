@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_venda" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3f544aef-d6f0-416e-950a-2deb8e44199a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     cliente.`id_cli` AS cliente_id_cli,
+     cliente.`nome_cli` AS cliente_nome_cli,
+     cliente.`data_nasc_cli` AS cliente_data_nasc_cli,
+     cliente.`email_cli` AS cliente_email_cli,
+     cliente.`cpf_cli` AS cliente_cpf_cli,
+     cliente.`rg_cli` AS cliente_rg_cli,
+     cliente.`endereco_cli` AS cliente_endereco_cli,
+     cliente.`sexo_cli` AS cliente_sexo_cli
+FROM
+     `cliente` cliente INNER JOIN `venda` venda ON cliente.`id_cli` = venda.`fk_id_cli`]]>
+	</queryString>
+	<field name="id_cli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_nasc_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpf_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rg_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo_cli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_vend" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="hora_vend" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_vend" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor_vend" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="formaPag_vend" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fk_id_cli" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cliente_id_cli" class="java.lang.Integer"/>
+	<field name="cliente_nome_cli" class="java.lang.String"/>
+	<field name="cliente_data_nasc_cli" class="java.lang.String"/>
+	<field name="cliente_email_cli" class="java.lang.String"/>
+	<field name="cliente_cpf_cli" class="java.lang.String"/>
+	<field name="cliente_rg_cli" class="java.lang.String"/>
+	<field name="cliente_endereco_cli" class="java.lang.String"/>
+	<field name="cliente_sexo_cli" class="java.lang.String"/>
+	<group name="hora_vend">
+		<groupExpression><![CDATA[$F{hora_vend}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="118" height="79" uuid="8e981c82-fdab-4c5a-9f32-ff7b6855c921"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="437" y="0" width="118" height="79" uuid="92dcfdbc-f931-49d7-afd5-ab0c31b5a288"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="118" y="0" width="319" height="79" uuid="7232edb0-b5ad-441e-978b-98f6f56c95ac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE VENDAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="43" y="31" width="52" height="20" backcolor="#CCFFFF" uuid="f5631259-e200-47d6-85d4-62d252245ddc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="31" width="43" height="20" backcolor="#CCCCCC" uuid="2b7d1130-1156-4809-ac70-543ee9ae34fc"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="250" y="31" width="125" height="20" backcolor="#CCCCCC" uuid="053b29d2-92a5-4de8-8ad4-6ccdb443da27"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="31" width="43" height="20" uuid="dadd3e1f-a606-4180-a915-a93b581d32da"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="176" y="31" width="74" height="20" backcolor="#CCFFFF" uuid="3cd6a181-094c-4c02-a793-334125d7fe04"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="250" y="31" width="125" height="20" uuid="8e67e50a-dfe7-4f71-a77f-86bd394ef70b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORA DE PAGAMENTO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="95" y="31" width="81" height="20" backcolor="#CCCCCC" uuid="5c29b55e-3427-4b70-ac8e-c1df684709df"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="95" y="31" width="81" height="20" uuid="c2ae9b49-05d9-4993-85d6-5be947a337fa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="31" width="74" height="20" uuid="4ceab459-5752-4d3b-b407-7e1a977e6b10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="31" width="52" height="20" uuid="23f812fe-fbfe-4b7c-94b0-ef9888891f8e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HORA]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="375" y="31" width="180" height="20" backcolor="#CCFFFF" uuid="97dc776b-3dbc-42f7-8114-1924cae33924"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="375" y="31" width="180" height="20" uuid="00816ec4-1d4c-4a8b-9ad2-21788d7440e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="250" y="0" width="125" height="20" backcolor="#CCCCCC" uuid="6e7e1b5e-89b2-4d5b-8696-5c842a1478a1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="176" y="0" width="74" height="20" backcolor="#CCFFFF" uuid="55cafc93-528d-43eb-bf8e-56ccdafb7594"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="95" y="0" width="81" height="20" backcolor="#CCCCCC" uuid="13b50ca5-e26f-4cdb-b2bb-49ddf47f1e07"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="43" height="20" backcolor="#CCCCCC" uuid="570adbfd-42c9-4d7e-828c-440c6d9b4118"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="375" y="0" width="180" height="20" backcolor="#CCFFFF" uuid="e5f1974e-40c8-4a3f-ba4f-58f265a6337e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="43" y="0" width="52" height="20" backcolor="#CCFFFF" uuid="78d6831e-249b-43d7-b998-c4cf5fd2a60a"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="43" height="20" uuid="37272571-ff59-4381-93da-40253ee66fc0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_vend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="52" height="20" uuid="acbcad85-791a-4843-91d6-aab433f66654"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hora_vend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="95" y="0" width="81" height="20" uuid="502461cf-7573-4b80-bc43-f97226fee008"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{data_vend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="0" width="74" height="20" uuid="fe19d27a-2971-4c93-b9b2-1f708fd98dce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{valor_vend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="0" width="125" height="20" uuid="e06469fd-d064-46ab-9381-7c4827d771b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{formaPag_vend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="180" height="20" uuid="34eb8e70-cddc-4ddd-bb53-086a11762719"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_cli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

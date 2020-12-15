@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorio_produto" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="44523d83-7b52-439e-9019-0dbe48da5e5f">
+	<property name="ireport.zoom" value="0.9090909090909095"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     fornecedor.`id_forn` AS fornecedor_id_forn,
+     fornecedor.`nomeFantasia_forn` AS fornecedor_nomeFantasia_forn,
+     fornecedor.`razaoSocial_forn` AS fornecedor_razaoSocial_forn,
+     fornecedor.`cnpj_forn` AS fornecedor_cnpj_forn,
+     fornecedor.`cep_forn` AS fornecedor_cep_forn,
+     fornecedor.`pais_forn` AS fornecedor_pais_forn,
+     fornecedor.`estado_forn` AS fornecedor_estado_forn,
+     fornecedor.`cidade_forn` AS fornecedor_cidade_forn,
+     fornecedor.`telefone_forn` AS fornecedor_telefone_forn,
+     fornecedor.`endereco_forn` AS fornecedor_endereco_forn,
+     fornecedor.`descricao_forn` AS fornecedor_descricao_forn
+FROM
+     `fornecedor` fornecedor INNER JOIN `produto` produto ON fornecedor.`id_forn` = produto.`fk_id_forn`]]>
+	</queryString>
+	<field name="id_forn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeFantasia_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="razaoSocial_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnpj_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cep_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pais_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cidade_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao_forn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="id_prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="categoria_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="marca_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fk_id_forn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao_prod" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QntdEstoque_prod" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precoVenda" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fornecedor_id_forn" class="java.lang.Integer"/>
+	<field name="fornecedor_nomeFantasia_forn" class="java.lang.String"/>
+	<field name="fornecedor_razaoSocial_forn" class="java.lang.String"/>
+	<field name="fornecedor_cnpj_forn" class="java.lang.String"/>
+	<field name="fornecedor_cep_forn" class="java.lang.String"/>
+	<field name="fornecedor_pais_forn" class="java.lang.String"/>
+	<field name="fornecedor_estado_forn" class="java.lang.String"/>
+	<field name="fornecedor_cidade_forn" class="java.lang.String"/>
+	<field name="fornecedor_telefone_forn" class="java.lang.String"/>
+	<field name="fornecedor_endereco_forn" class="java.lang.String"/>
+	<field name="fornecedor_descricao_forn" class="java.lang.String"/>
+	<group name="nome_prod">
+		<groupExpression><![CDATA[$F{nome_prod}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="87" y="0" width="628" height="79" uuid="d4992da6-d9d9-4fb0-8c84-360ad86619db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DE PRODUTOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="715" y="0" width="87" height="79" uuid="fc7be143-8230-4abf-b5b0-edd9d86081b0"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="87" height="79" uuid="895aa754-c8bd-42c6-97de-c84af163663b"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<rectangle>
+				<reportElement x="678" y="18" width="124" height="20" backcolor="#CCFFFF" uuid="e9b76490-7970-45c7-84b7-deb7bc13d713"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="454" y="18" width="168" height="20" backcolor="#CCCCCC" uuid="a3e75ad7-7929-4502-9347-2ee4cc680b14"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="375" y="18" width="79" height="20" backcolor="#CCFFFF" uuid="6e5f89ad-dde1-4fca-bba1-528b906497d9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="159" y="18" width="117" height="20" backcolor="#CCFFFF" uuid="eef29f37-1732-425b-b851-449216124063"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="25" y="18" width="134" height="20" backcolor="#CCCCCC" uuid="b2aead1d-3f47-4ca0-a492-02a262d9f904"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="18" width="25" height="20" backcolor="#CCFFFF" uuid="d946de03-a702-4e83-adb5-79f144e74bad"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="276" y="18" width="99" height="20" backcolor="#CCCCCC" uuid="9f1e74b5-019b-4c6d-a837-dfd23d32067c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="454" y="18" width="168" height="20" uuid="1acd896c-8586-4226-a39b-015fab8c7600"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[FORNECEDOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="18" width="25" height="20" uuid="5b5823a0-7630-47c5-89f7-2e95257db46f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="25" y="18" width="134" height="20" uuid="45cfea77-5c80-45d4-bf35-d2fd5a323441"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="18" width="117" height="20" uuid="5df76fec-9ff1-4fc7-aa58-d5b4a52d978f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[CATEGORIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="18" width="79" height="20" uuid="e38fee33-f63e-4e32-9290-9cb53a4e63cf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PREÇO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="18" width="99" height="20" uuid="ea1cbde9-98e5-4fee-bd3e-77013c69cef4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[MARCA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="678" y="18" width="125" height="20" uuid="e832b43c-ef93-473e-bfbe-440961fc8da4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[DESCRIÇÃO]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="622" y="18" width="56" height="20" backcolor="#CCFFFF" uuid="2a4d5487-5050-4c43-b168-1ad1f63d885c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="622" y="18" width="56" height="20" uuid="5891b845-156d-4144-9fac-af5b169b21e7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ESTOQUE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="454" y="0" width="168" height="20" backcolor="#CCCCCC" uuid="9543fea8-1b90-4390-8a43-5b47ee926ea8"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="25" y="0" width="134" height="20" backcolor="#CCCCCC" uuid="f400c2a0-d8bd-4922-80b7-a0c9407cfbf6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="159" y="0" width="117" height="20" backcolor="#CCFFFF" uuid="8b8d712b-dd25-449a-ac9c-02a470426d83"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="0" width="25" height="20" backcolor="#CCFFFF" uuid="93a3b624-7b5d-41ae-a91d-5cbdb619a0ad"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="678" y="0" width="124" height="20" backcolor="#CCFFFF" uuid="be00bacf-12b2-4c61-ab49-bb28a36a320f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="276" y="0" width="99" height="20" backcolor="#CCCCCC" uuid="ad78cd9f-b181-4219-9118-134d4ce4ba1b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="375" y="0" width="79" height="20" backcolor="#CCFFFF" uuid="b787320f-d171-4559-829c-463a36ffe22d"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="25" height="20" uuid="8cc77f38-2155-4dbc-a752-6d61dc2c382b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="0" width="134" height="20" uuid="65424441-28a2-4417-8a29-25450b1496f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nome_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="0" width="117" height="20" uuid="1ae0f106-bed0-40e1-af48-513be4133066"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{categoria_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="99" height="20" uuid="35df59d9-86fd-446e-a8ef-4843f51b757f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{marca_prod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="0" width="79" height="20" uuid="bb833620-11b0-4b25-b796-2d6b7bac0c45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{precoVenda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="454" y="0" width="168" height="20" uuid="d91b4301-b8f1-4e59-97b7-86adc2afd2cc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nomeFantasia_forn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="678" y="0" width="124" height="20" uuid="6fb788f1-f6b7-43e0-b118-8682ac10b871"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{descricao_prod}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="622" y="0" width="56" height="20" backcolor="#CCFFFF" uuid="fd71531c-3538-4118-b343-fc8d20174d21"/>
+			</rectangle>
+			<textField>
+				<reportElement x="622" y="0" width="56" height="20" uuid="c69fb125-a418-4e35-bba0-ea9fa8c53b0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{QntdEstoque_prod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="46" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
